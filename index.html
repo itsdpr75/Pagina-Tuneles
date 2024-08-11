@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuneles Avandonados</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: url('/media/background.webp') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            position: fixed;
+            top: 20px;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 25px;
+            width: 400px;
+        }
+        .nav-button {
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+            position: relative;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+        .nav-button:not(.center-button)::before {
+            content: '';
+            position: absolute; /*no cambies esto coño*/
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #ff00ff, #00ffff, #ff00ff, #00ffff);
+            z-index: -1;
+            border-radius: 17px;
+            background-size: 400% 400%;
+            animation: animateGradient 15s ease infinite;
+        }
+        @keyframes animateGradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        .nav-button:hover {
+            transform: scale(1.05);
+        }
+        .center-button {
+            transform: rotate(5deg);
+            background-color: transparent;
+        }
+        .center-button img {
+            width: 40px;
+            height: 40px;
+        }
+        main {
+            padding-top: 100px;
+        }
+        section {
+            background-color: rgba(0, 0, 0, 0.7);
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100px; /* Ajusta esto según sea necesario */
+            background: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .requirements {
+            display: flex;
+            justify-content: space-around;
+        }
+        .requirements div {
+            width: 45%;
+        }
+        .screenshots {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .screenshots img {
+            width: 30%;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/download.html" class="nav-button">Descargar</a>
+            <a href="https://x.com/ItsDPR" target="_blank" class="nav-button center-button">
+                <img src="/media/noha.webp" alt="ir a la pagina principal">
+            </a>
+            <a href="ENLACE" class="nav-button">Mas</a>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <section>
+                <h1>EN DESARROYO</h1>
+            </section>
+            <section>
+                <h1>Bienvenido a los tuneles</h1>
+                <p>Un proyecto de exploracion y supervivencia.</p>
+                <p>Explora, repara, construye, busca, mata, defiendete.</p>
+                <p>Tu objetivo principal es encontrar una salida, estos tuneles fueron avandonados por una razon.</p>
+                <p>Si caminas demasiado, quiza descubras por que.</p>
+            </section>
+            
+            <section>
+                <h2>Requisitos del Sistema</h2>
+                <div class="requirements">
+                    <div>
+                        <h3>Minimos</h3>
+                        <ul>
+                            <li>Sistema Operativo: Windows 10 64-bit / Linux Kernel 5.10</li>
+                            <li>Procesador: Intel i5 11000 </li>
+                            <li>Memoria: 5GB RAM</li>
+                            <li>Graficos: Intel UHD Graphics 730</li>
+                            <li>Almacenamiento: 7GB</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Recomendados</h3>
+                        <ul>
+                            <li>Sistema Operativo: Windows 10 64-bit / Linux Kernel 5.10</li>
+                            <li>Procesador: Intel i5 12000</li>
+                            <li>Memoria: 8GB RAM</li>
+                            <li>Graficos: RTX 2080ti</li>
+                            <li>Almacenamiento: 10GB</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2>Capturas de Pantalla</h2>
+                <div class="screenshots">
+                    <img src="/media/Screenshots/Screenshot1.webp" alt="foto 1">
+                    <img src="/media/Screenshots/Screenshot2.webp" alt="foto 2">
+                    <img src="/media/Screenshots/Screenshot3.webp" alt="foto 3">
+                </div>
+                <div class="screenshots">
+                    <img src="/media/Screenshots/Screenshot4.webp" alt="foto 4">
+                    <img src="/media/Screenshots/Screenshot5.webp" alt="foto 5">
+                    <img src="/media/Screenshots/Screenshot6.webp" alt="foto 6">
+                </div>
+                <div class="screenshots">
+                    <a href="/media/Screenshots/webpfullRes/images.html" class="nav-button">ver imagenes</a>
+                    <a href="/media/Screenshots/images-full_res.7z" class="nav-button" download="">descargar imagenes png (367MB)</a>
+                    <a href="/media/Screenshots/images-webp.7z" class="nav-button" download="">descargar imagenes webp (5.72MB)</a>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script>
+        const header = document.querySelector('header');
+        const sections = document.querySelectorAll('section');
+
+        function checkSections() {
+            const headerBottom = header.getBoundingClientRect().bottom;
+            sections.forEach(section => {
+                const sectionRect = section.getBoundingClientRect();
+                const overlap = Math.max(0, Math.min(sectionRect.bottom, headerBottom) - sectionRect.top);
+                const maxOverlap = 100; // Debe coincidir con la altura del gradiente en CSS
+                const opacity = Math.min(overlap / maxOverlap, 1);
+                section.style.setProperty('--overlap-opacity', opacity);
+                section.style.setProperty('--overlap-height', `${overlap}px`);
+            });
+        }
+
+        window.addEventListener('scroll', checkSections);
+        checkSections(); // Llamada inicial para establecer el estado correcto
+    </script>
+</body>
+</html>

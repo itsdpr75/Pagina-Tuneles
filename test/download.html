@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descargar</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: url('/media/background.webp') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            position: fixed;
+            top: 20px;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 25px;
+            width: 400px;
+        }
+        .nav-button {
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+            position: relative;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+        .nav-button:not(.center-button)::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #ff00ff, #00ffff, #ff00ff, #00ffff);
+            z-index: -1;
+            border-radius: 17px;
+            background-size: 400% 400%;
+            animation: animateGradient 15s ease infinite;
+        }
+        @keyframes animateGradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        .nav-button:hover {
+            transform: scale(1.05);
+        }
+        .center-button {
+            transform: rotate(5deg);
+            background-color: transparent;
+        }
+        .center-button img {
+            width: 40px;
+            height: 40px;
+        }
+        main {
+            padding-top: 100px;
+        }
+        section {
+            background-color: rgba(0, 0, 0, 0.7);
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .download-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        select, button {
+            margin: 10px 0;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 15px;
+            border: none;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        select::before, button::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #ff00ff, #00ffff, #ff00ff, #00ffff);
+            z-index: -1;
+            border-radius: 17px;
+            background-size: 400% 400%;
+            animation: animateGradient 15s ease infinite;
+        }
+        button:hover {
+            transform: scale(1.05);
+        }
+        .download-info {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/index.html" class="nav-button">Volver al inicio</a>
+            <a href="https://x.com/ItsDPR" target="_blank" class="nav-button center-button">
+                <img src="/media/noha.webp" alt="ir a la pagina principal">
+            </a>
+            <a href="ENLACE" class="nav-button">Mas</a>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <section>
+                <h1>Descargar Tuneles Avandonados</h1>
+                <p>Bienvenido a la página de descarga de Tuneles Avandonados. Aquí podrás obtener la última versión del juego para tu sistema operativo.</p>
+            </section>
+            
+            <section id="download" class="download-section">
+                <h2>Descargar el juego</h2>
+                <select id="os-select">
+                    <option value="">Selecciona tu sistema operativo</option>
+                    <option value="windows">Windows</option>
+                    <option value="linux">Linux</option>
+                </select>
+                <button id="download-button" disabled>Descargar</button>
+                <div id="download-info" class="download-info"></div>
+            </section>
+        </div>
+    </main>
+    <script>
+        const osSelect = document.getElementById('os-select');
+        const downloadButton = document.getElementById('download-button');
+        const downloadInfo = document.getElementById('download-info');
+
+        // ola
+        const downloadLinks = {
+            windows: 'https://mega.nz/file/7e4D1CyL#y6lKOHu_1Zx9jQfNBkxtNAuSwu160QxNFNee4WBpvPU',
+            linux: 'https://mega.nz/file/yOZBTK6Q#5T7JXdUHTmoiHb0WBLtWAyi0zVUKWQdLQVF5rVoMvQ0'
+        };
+
+        osSelect.addEventListener('change', function() {
+            if (this.value) {
+                downloadButton.disabled = false;
+                downloadButton.textContent = `Descargar para ${this.value.charAt(0).toUpperCase() + this.value.slice(1)}`;
+                
+                if (this.value === 'windows') {
+                    downloadInfo.innerHTML = `
+                        <h3>Instrucciones para Windows:</h3>
+                        <ol>
+                            <li>Haz clic en el botón de descarga para abrir el enlace de Mega</li>
+                            <li>Descarga el archivo .7z</li>
+                            <li>Extrae el contenido del archivo</li>
+                            <li>Ejecuta Tuneles.exe</li>
+                        </ol>
+                    `;
+                } else if (this.value === 'linux') {
+                    downloadInfo.innerHTML = `
+                        <h3>Instrucciones para Linux:</h3>
+                        <ul>
+                            <p>Haz clic en el botón de descarga para abrir el enlace de Mega</p>
+
+                            <p>Descarga el archivo .7z</p>
+                            
+                            <p>Descomprime el archivo .7z con el siguiente comando: </p>
+                            
+                            <p>
+                                <code>7z x archivo.7z</code>
+                            </p>
+
+                            <p>Navega al directorio descomprimido</p>
+
+                            <p>Ejecuta: <code>./Tuneles.sh</code></p>
+                        </ul>
+                    `;
+                }
+            } else {
+                downloadButton.disabled = true;
+                downloadButton.textContent = 'Descargar';
+                downloadInfo.innerHTML = '';
+            }
+        });
+
+        downloadButton.addEventListener('click', function() {
+            const os = osSelect.value;
+            if (os && downloadLinks[os]) {
+                window.open(downloadLinks[os], '_blank');
+            } else {
+                alert('Por favor, selecciona un sistema operativo válido.');
+            }
+        });
+    </script>
+</body>
+</html>
